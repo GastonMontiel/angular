@@ -26,9 +26,9 @@ export class HeroDetailComponent implements OnInit {
 
   getHero(): void {
     const name = String(this.route.snapshot.paramMap.get('name'));
-    this.menssageService.add(`el heroe seleccionado ${name}`)
     this.heroService.getHero(name)
       .subscribe(hero => this.hero = hero);
+      this.menssageService.add(`el heroe seleccionado ${name}`)
   }
 
   goBack(){
